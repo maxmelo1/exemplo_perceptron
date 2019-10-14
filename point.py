@@ -8,8 +8,15 @@ class Point:
 
         self.label = 1 if x > y else -1
 
-    def draw(self):
-        color = 'r' if self.x <= self.y else 'g'
+    def getEntradas(self):
+        return [self.x, self.y]
+
+    def setLabel(self, label):
+        self.label = label
+
+    def draw(self, color=None):
+        if color is None:
+            color = 'r' if self.label == 1 else 'g'
 
         pt = plt.Circle( (self.x,self.y), 1, color=color )
 

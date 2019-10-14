@@ -15,8 +15,7 @@ def main():
 
     print(chute)
 
-    points = generatePoints()
-
+    points = gerarPontosAleatorios()
 
 
 
@@ -24,17 +23,45 @@ def main():
     plt.plot(x, x)
 
 
+    # for p in points:
+    #     #p.draw()
+    #     perc.treinar( p.getEntradas(), p.label )
+    #
+    #     chute = perc.adivinhar(p.getEntradas())
+    #
+    #     point = Point(p.x, p.y, ax)
+    #     point.setLabel(chute)
+    #     print( "%d, %d = %d, certo? = %s" %(point.x, point.y, point.label, "sim" if point.label == p.label else "não" ))
+    #     point.draw()
+
+    entradas = []
+    labels   = []
+    #não precisaria varrer os labels fora do método, fiz apenas para separar
     for p in points:
+        entradas.append(p.getEntradas())
+        labels.append(p.label)
         p.draw()
 
-
-
-
+    ax.set_title('Resultado correto (antes do treinamento)')
     plt.show()
+    plt.close()
+
+    print('As imagens seguintes mostram o resultado da rede, treinando e se ajustando a partir dos exemplos fornecidos')
+    perc.treinarBatch(entradas, labels)
+
+    for p in points:
+        chute = perc.adivinhar(p.getEntradas())
+        point = Point(p.x, p.y, ax)
+        point.setLabel(chute)
+        #descomente abaixo para se assegurar que todos os exemplos foram classificados corretamente.
+        #print("%d, %d = %d, certo? = %s" % (point.x, point.y, point.label, "sim" if point.label == p.label else "não"))
 
 
 
-def generatePoints():
+
+
+
+def gerarPontosAleatorios():
     points = []
     for i in range(50):
         x = int(random.uniform(0,50))

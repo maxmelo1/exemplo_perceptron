@@ -11,3 +11,7 @@
 - Classificar pontos de duas classes.
 	- Abaixo da diagonal principal.
 	- Acima da diagonal principal.
+
+## Instalação das bilbiotecas
+
+- python -m pip install -U -r files.txt
