@@ -34,7 +34,7 @@ class Perceptron():
 
     '''
     serve para ajustar os pesos da perceptron a partir dos exemplos
-    o nome correto seria train. Train deveria receber um vetor de entradas e não somente uma entrada
+    o nome correto seria fit. Train deveria receber um vetor de entradas e não somente uma entrada
     '''
 
     def treinar(self, entradas, classe):
@@ -47,7 +47,7 @@ class Perceptron():
 
     '''
         serve para ajustar os pesos da perceptron a partir dos exemplos
-        o nome correto seria train. Deveria repetir até o erro decair a zero
+        o nome correto seria fit. Deveria repetir até o erro decair a zero
         '''
 
     def treinarBatch(self, entradas, classes):

@@ -4,6 +4,7 @@ def Main():
     x0 = [0, 0, 1, 1]
     x1 = [0, 1, 0, 1]
     y  = [0, 0, 0, 1]
+    
     ypred = [0, 0, 0, 0]
 
     w0 = 0
@@ -23,7 +24,7 @@ def Main():
 
             ypred[i] = degrau(acc)
         
-            erro = erro + (y[i] - ypred[i])
+            erro +=  (y[i] - ypred[i])
         erro = erro /len(x0)
 
 
@@ -31,10 +32,10 @@ def Main():
             w0 = w0 + alpha*erro*x0[i]
             w1 = w1 + alpha*erro*x1[i]
 
-        print(w0)
+        #print(w0)
             
 
-        print("fim da iteração %d, erro: %d"%(it, erro))
+        print("fim da iteração %d, erro: %f"%(it, erro))
         print(ypred)
         it = it + 1
 
@@ -42,6 +43,7 @@ def Main():
         input()
         
 
+    print ("w0 = %f e w1 = %f" %(w0,w1))
     print(ypred)
 
     

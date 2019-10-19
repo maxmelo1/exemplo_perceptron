@@ -54,9 +54,10 @@ def main():
         point = Point(p.x, p.y, ax)
         point.setLabel(chute)
         #descomente abaixo para se assegurar que todos os exemplos foram classificados corretamente.
-        #print("%d, %d = %d, certo? = %s" % (point.x, point.y, point.label, "sim" if point.label == p.label else "não"))
+        print("%d, %d = %d, certo? = %s" % (point.x, point.y, point.label, "sim" if point.label == p.label else "não"))
 
-
+    p2 = Point(20,10, ax )   
+    print( perc.adivinhar(p2.getEntradas()) )
 
 
 
